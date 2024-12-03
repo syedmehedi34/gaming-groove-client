@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import ReactStars from "react-rating-stars-component";
+import Swal from "sweetalert2";
 
 const AddReviews = () => {
   const ratingRef = useRef(0); // Ref to hold the rating value
@@ -26,9 +27,31 @@ const AddReviews = () => {
 
     console.log(formData);
 
+    // send data to the server and database
+    fetch("http://localhost:5001/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          // console.log("successfully added");
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee added successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          e.target.reset();
+        }
+      });
+
     // Add your logic to store the data in the database here
 
-    toast.success("Review submitted successfully!");
+    // toast.success("Review submitted successfully!");
   };
 
   //////////////////
