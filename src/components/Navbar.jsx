@@ -1,7 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const user = {
+    // email: "syedmehedi34@gmail.com",
+    // photoURL: "https://i.ibb.co.com/YtQdMpr/my-photo.jpg",
+  };
   const list = (
     <>
       <li>
@@ -22,8 +26,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar ">
+    <div className="bg-slate-300">
+      <div className="navbar w-11/12 mx-auto">
         {/*// * start */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -60,7 +64,51 @@ const Navbar = () => {
 
         {/*// * ends */}
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <div>
+            {user && user?.email ? (
+              <div className="flex items-center gap-5">
+                {/*  */}
+
+                <div>
+                  <img
+                    className="w-12 h-12 rounded-full transition-transform duration-200 ease-in-out  active:scale-90  cursor-pointer object-cover border-2 border-[#1e3c72]"
+                    src={user?.photoURL}
+                    alt="Error"
+                  />
+                </div>
+                <button
+                  // onClick={() => {
+                  //   logOut();
+                  //   toast.success("Logged out successfully!", {
+                  //     position: "top-left",
+                  //     autoClose: 2000,
+                  //     pauseOnHover: true,
+                  //   });
+                  // }}
+                  className="btn btn-neutral"
+                >
+                  Log Out
+                </button>
+
+                {/* <p>{user?.displayName}</p> */}
+              </div>
+            ) : (
+              <div className="flex items-center gap-1 *:text-white">
+                <Link
+                  to="/auth/login"
+                  className="btn bg-[#162c57cd] hover:bg-[#162c57cd]"
+                >
+                  SignIn
+                </Link>
+                <Link
+                  to="/auth/register"
+                  className="btn  bg-[#162c57cd] hover:bg-[#162c57cd]"
+                >
+                  SignUp
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
