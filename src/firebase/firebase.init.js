@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDL0IFRJd9STM7PqOBijO6RljaGhcnbSaQ",
-  authDomain: "p-hero-10.firebaseapp.com",
-  projectId: "p-hero-10",
-  storageBucket: "p-hero-10.firebasestorage.app",
-  messagingSenderId: "337522952567",
-  appId: "1:337522952567:web:1d3bee0f1b91f0c3d77972",
+  apiKey: "AIzaSyBPUHWsHL8Qn109rcO2riw_A4iRUaTeljI",
+  authDomain: "p-hero-assignment.firebaseapp.com",
+  projectId: "p-hero-assignment",
+  storageBucket: "p-hero-assignment.firebasestorage.app",
+  messagingSenderId: "416916706686",
+  appId: "1:416916706686:web:d2bacca70361c02396cf2f",
 };
 
 // Initialize Firebase
