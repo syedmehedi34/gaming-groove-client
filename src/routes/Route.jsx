@@ -9,6 +9,7 @@ import GameWatchList from "../pages/GameWatchList";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import PrivateRoute from "./PrivateRoute";
+import ReviewDetails from "../components/ReviewDetails";
 
 const routes = [
   {
@@ -20,8 +21,13 @@ const routes = [
         element: <Home></Home>,
       },
       {
-        path: "/all_reviews",
+        path: "/reviews",
         element: <AllReviews></AllReviews>,
+        loader: () => fetch("http://localhost:5001/reviews"),
+      },
+      {
+        path: "/review/:id",
+        element: <ReviewDetails></ReviewDetails>,
         loader: () => fetch("http://localhost:5001/reviews"),
       },
 

@@ -1,5 +1,6 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 
 const ReviewCards = ({ game }) => {
   console.log(game);
@@ -46,9 +47,11 @@ const ReviewCards = ({ game }) => {
 
         {/* Explore Details Button */}
         <div className="mt-4">
-          <button className="btn bg-custom-gradient text-white w-full">
-            Explore Details
-          </button>
+          <Link to={`/review/${_id}`}>
+            <button className="btn bg-custom-gradient text-white w-full">
+              Explore Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
