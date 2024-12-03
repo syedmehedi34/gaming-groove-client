@@ -7,9 +7,9 @@ const AllReviews = () => {
   console.log(data);
 
   return (
-    <div className="">
+    <div className="w-11/12 mx-auto">
       {/*  sorting starts */}
-      <div className="p-4">
+      <div className="py-4">
         <div className="flex justify-center ">
           <select className="select select-bordered w-full max-w-xs">
             <option disabled selected>

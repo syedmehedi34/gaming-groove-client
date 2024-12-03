@@ -10,6 +10,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../components/ReviewDetails";
+import Loading from "../pages/Loading";
 
 const routes = [
   {
@@ -28,7 +29,8 @@ const routes = [
       {
         path: "/review/:id",
         element: <ReviewDetails></ReviewDetails>,
-        loader: () => fetch("http://localhost:5001/reviews"),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/review/${params.id}`),
       },
 
       // ! add review private route starts

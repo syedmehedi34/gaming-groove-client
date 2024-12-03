@@ -3,7 +3,7 @@ import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
 
 const ReviewCards = ({ game }) => {
-  console.log(game);
+  // console.log(game);
   const {
     _id,
     gameCover,
@@ -13,7 +13,6 @@ const ReviewCards = ({ game }) => {
     rating,
     reviewDescription,
   } = game;
-  console.log(gameTitle, rating);
 
   return (
     <div className="card bg-white drop-shadow-xl rounded-lg p-5">

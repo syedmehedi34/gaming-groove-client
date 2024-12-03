@@ -6,7 +6,7 @@ import { AuthContext } from "../providers/AuthProvider";
 const AddReviews = () => {
   const ratingRef = useRef(0);
   const { user } = useContext(AuthContext);
-  console.log(user.displayName, user.email);
+  // console.log(user.displayName, user.email);
   const userName = user.displayName;
   const userMail = user.email;
 

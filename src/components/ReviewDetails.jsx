@@ -12,8 +12,9 @@ import {
 
 const ReviewDetails = () => {
   const navigate = useNavigate();
-  const data = useLoaderData();
-  const gameDetails = data[0];
+  const gameDetails = useLoaderData();
+  //   console.log(gameDetails);
+  //   const gameDetails = data[0];
 
   ////////////////////////////////
   return (
