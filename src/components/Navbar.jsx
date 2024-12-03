@@ -16,15 +16,24 @@ const Navbar = () => {
       <li>
         <NavLink to="/all_reviews">All Reviews</NavLink>
       </li>
-      <li>
-        <NavLink to="/add_review">Add Review</NavLink>
-      </li>
-      <li>
-        <NavLink to="/my_reviews">My Reviews</NavLink>
-      </li>
-      <li>
-        <NavLink to="/game_watchlist">Game WatchList</NavLink>
-      </li>
+
+      {user && (
+        <li>
+          <NavLink to="/add_review">Add Review</NavLink>
+        </li>
+      )}
+
+      {user && (
+        <li>
+          <NavLink to="/my_reviews">My Reviews</NavLink>
+        </li>
+      )}
+
+      {user && (
+        <li>
+          <NavLink to="/game_watchlist">Game WatchList</NavLink>
+        </li>
+      )}
     </>
   );
   return (
