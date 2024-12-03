@@ -22,6 +22,7 @@ const routes = [
       {
         path: "/all_reviews",
         element: <AllReviews></AllReviews>,
+        loader: () => fetch("http://localhost:5001/reviews"),
       },
 
       // ! add review private route starts

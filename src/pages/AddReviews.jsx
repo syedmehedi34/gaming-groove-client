@@ -1,10 +1,14 @@
-import React, { useRef, useState } from "react";
-import { toast } from "react-toastify";
+import React, { useContext, useRef } from "react";
 import ReactStars from "react-rating-stars-component";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const AddReviews = () => {
-  const ratingRef = useRef(0); // Ref to hold the rating value
+  const ratingRef = useRef(0);
+  const { user } = useContext(AuthContext);
+  console.log(user.displayName, user.email);
+  const userName = user.displayName;
+  const userMail = user.email;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +27,8 @@ const AddReviews = () => {
       rating,
       publishingYear,
       genre,
+      userName,
+      userMail,
     };
 
     console.log(formData);
@@ -45,13 +51,11 @@ const AddReviews = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
+          ratingRef.current = 0;
           e.target.reset();
+          // rating = 0;
         }
       });
-
-    // Add your logic to store the data in the database here
-
-    // toast.success("Review submitted successfully!");
   };
 
   //////////////////
@@ -131,8 +135,6 @@ const AddReviews = () => {
                 type="number"
                 name="publishingYear"
                 className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
-                min="1900"
-                max={new Date().getFullYear()}
                 placeholder="Ex: 2024"
                 required
               />
@@ -156,6 +158,35 @@ const AddReviews = () => {
                 <option value="Shooter">Shooter</option>
                 <option value="Sports">Sports</option>
               </select>
+            </div>
+          </div>
+
+          {/*  */}
+
+          <div className="flex gap-6">
+            <div className="w-full">
+              <label className="block text-sm font-medium text-gray-700">
+                User Name
+              </label>
+              <input
+                type="text"
+                name="gameTitle"
+                className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
+                disabled
+                defaultValue={userName}
+              />
+            </div>
+            <div className="w-full">
+              <label className="block text-sm font-medium text-gray-700">
+                User Email
+              </label>
+              <input
+                type="text"
+                name="gameTitle"
+                className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
+                disabled
+                defaultValue={userMail}
+              />
             </div>
           </div>
 
