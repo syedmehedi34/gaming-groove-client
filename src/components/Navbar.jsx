@@ -1,11 +1,13 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const user = {
-    // email: "syedmehedi34@gmail.com",
-    // photoURL: "https://i.ibb.co.com/YtQdMpr/my-photo.jpg",
-  };
+  const { user, logOut } = useContext(AuthContext);
+
+  const location = useLocation();
+
   const list = (
     <>
       <li>
@@ -77,14 +79,14 @@ const Navbar = () => {
                   />
                 </div>
                 <button
-                  // onClick={() => {
-                  //   logOut();
-                  //   toast.success("Logged out successfully!", {
-                  //     position: "top-left",
-                  //     autoClose: 2000,
-                  //     pauseOnHover: true,
-                  //   });
-                  // }}
+                  onClick={() => {
+                    logOut();
+                    toast.success("Logged out successfully!", {
+                      position: "top-left",
+                      autoClose: 2000,
+                      pauseOnHover: true,
+                    });
+                  }}
                   className="btn btn-neutral"
                 >
                   Log Out
