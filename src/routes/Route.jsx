@@ -8,6 +8,7 @@ import MyReviews from "../pages/MyReviews";
 import GameWatchList from "../pages/GameWatchList";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = [
   {
@@ -22,14 +23,29 @@ const routes = [
         path: "/all_reviews",
         element: <AllReviews></AllReviews>,
       },
+
+      // ! add review private route starts
       {
         path: "/add_review",
-        element: <AddReviews></AddReviews>,
+        element: (
+          <PrivateRoute>
+            <AddReviews></AddReviews>
+          </PrivateRoute>
+        ),
       },
+      // ! add review private route ends  .
+
+      // ! my reviews private route starts
       {
         path: "/my_reviews",
-        element: <MyReviews></MyReviews>,
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
       },
+      // ! my reviews private route ends  .
+
       {
         path: "/game_watchlist",
         element: <GameWatchList></GameWatchList>,
