@@ -14,7 +14,7 @@ const AddReviews = () => {
     e.preventDefault();
 
     const gameCover = e.target.gameCover.value;
-    const gameTitle = e.target.gameTitle.value;
+    const gameTitle = e.target.name.value;
     const reviewDescription = e.target.reviewDescription.value;
     const rating = ratingRef.current;
     const publishingYear = e.target.publishingYear.value;
@@ -31,7 +31,8 @@ const AddReviews = () => {
       userMail,
     };
 
-    console.log(formData);
+    // console.log(formData);
+    console.log(gameTitle);
 
     // send data to the server and database
     fetch("http://localhost:5001/reviews", {
@@ -86,7 +87,7 @@ const AddReviews = () => {
               </label>
               <input
                 type="text"
-                name="gameTitle"
+                name="name"
                 className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
                 placeholder="Enter game title"
                 required
