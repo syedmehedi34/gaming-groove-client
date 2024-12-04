@@ -32,7 +32,7 @@ const AddReviews = () => {
     };
 
     // console.log(formData);
-    console.log(gameTitle);
+    // console.log(gameTitle);
 
     // send data to the server and database
     fetch("http://localhost:5001/reviews", {

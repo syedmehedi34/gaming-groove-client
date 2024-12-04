@@ -41,7 +41,7 @@ const MyReviews = () => {
     };
 
     fetchUserReviews();
-  }, [userMail]);
+  }, [userMail, reviews]);
 
   // -------------------------
 
@@ -99,6 +99,8 @@ const MyReviews = () => {
                 key={review._id}
                 review={review}
                 handleDelete={handleDelete}
+                reviews={reviews}
+                setReviews={setReviews}
               ></MyReview>
             ))}
           </tbody>
