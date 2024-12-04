@@ -4,7 +4,7 @@ import ReviewCards from "../components/ReviewCards";
 
 const AllReviews = () => {
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="w-11/12 mx-auto">

@@ -9,12 +9,46 @@ import {
   FaUser,
   FaArrowLeft,
 } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ReviewDetails = () => {
   const navigate = useNavigate();
   const gameDetails = useLoaderData();
   //   console.log(gameDetails);
   //   const gameDetails = data[0];
+
+  // * [ add watch functionalities ]--------
+  const handleAddWatch = (game) => {
+    // console.log(game);
+    const id = game._id;
+
+    //
+    const isWatchList = true;
+
+    const changedData = {
+      isWatchList,
+    };
+    // console.log(changedData);
+
+    // send data to the server and database
+    fetch(`http://localhost:5001/review/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(changedData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          toast.success("Game added to Watch List");
+        } else {
+          toast.error("Error! Can not remove this item");
+        }
+      });
+  };
+  //? ---------------------------------------
 
   ////////////////////////////////
   return (
@@ -127,7 +161,10 @@ const ReviewDetails = () => {
 
             {/* Watchlist Button */}
             <div className="mt-6 text-center">
-              <button className="bg-gradient-to-r btn from-purple-500 to-indigo-500 text-white  font-semibold rounded-full shadow-md hover:from-purple-600 hover:to-indigo-600 transition-all duration-300">
+              <button
+                onClick={() => handleAddWatch(gameDetails)}
+                className="bg-gradient-to-r btn from-purple-500 to-indigo-500 text-white  font-semibold rounded-full shadow-md hover:from-purple-600 hover:to-indigo-600 transition-all duration-300"
+              >
                 Add to Watchlist
               </button>
             </div>

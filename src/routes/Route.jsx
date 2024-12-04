@@ -57,7 +57,12 @@ const routes = [
 
       {
         path: "/game_watchlist",
-        element: <GameWatchList></GameWatchList>,
+        element: (
+          <PrivateRoute>
+            <GameWatchList></GameWatchList>
+          </PrivateRoute>
+        ),
+        // element: <GameWatchList></GameWatchList>,
       },
       {
         path: "/auth/login",

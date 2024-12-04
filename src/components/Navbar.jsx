@@ -80,7 +80,10 @@ const Navbar = () => {
               <div className="flex items-center gap-5">
                 {/*  */}
 
-                <div>
+                <div
+                  className="tooltip tooltip-bottom"
+                  data-tip={user?.displayName}
+                >
                   <img
                     className="w-12 h-12 rounded-full transition-transform duration-200 ease-in-out  active:scale-90  cursor-pointer object-cover border-2 border-[#1e3c72]"
                     src={user?.photoURL}
