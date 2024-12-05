@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .partial-underline {
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Center the text itself */
+  }
+
+  .partial-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%; /* Start the underline from the center of the text */
+    transform: translateX(-50%); /* Offset the position to truly center it */
+    width: 85%; /* Adjust the width of the underline */
+    height: 3px; /* Thickness of the underline */
+    background-color: black; /* Color of the underline */
+  }
+}
+
+/*  */
+a.active {
+  background: inherit !important;
+  color: #1e3c72 !important;
+  text-decoration: underline;
+  font-weight: 700 !important;
+}

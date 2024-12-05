@@ -6,8 +6,6 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const location = useLocation();
-
   const list = (
     <>
       <li>

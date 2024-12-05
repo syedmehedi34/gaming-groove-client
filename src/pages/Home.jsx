@@ -1,16 +1,25 @@
 import { useLoaderData } from "react-router-dom";
-import RatedData from "../components/RatedData";
+import Hero from "../components/Hero";
+import RatedGamesContainer from "../components/RatedGamesContainer";
+import DonateNow from "../components/DonateNow";
+import UpcomingReleases from "../components/UpcomingReleases";
+import GameNews from "../components/GameNews";
 
 const Home = () => {
   const data = useLoaderData();
-  // console.log(data);
   return (
-    <div className="w-11/12 mx-auto mt-28">
+    <div className="w-11/12 mx-auto mt-24">
       <div>
-        <h1>Home component</h1>
-        <div className="mt-20">
-          <RatedData data={data}></RatedData>
+        <div>
+          <Hero></Hero>
         </div>
+
+        <section>
+          <RatedGamesContainer data={data}></RatedGamesContainer>
+          <UpcomingReleases></UpcomingReleases>
+          <GameNews></GameNews>
+          <DonateNow></DonateNow>
+        </section>
       </div>
     </div>
   );
