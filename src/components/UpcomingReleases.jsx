@@ -1,4 +1,5 @@
 import { FaCalendarAlt } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 const UpcomingReleases = () => {
   const upcomingGames = [
@@ -63,10 +64,23 @@ const UpcomingReleases = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="flex items-center justify-center text-lg">
-            <FaCalendarAlt className="mr-2" />
-            Stay updated with the latest game releases!
-          </p>
+          <div className=" items-center justify-center text-lg">
+            <div>
+              <p className="text-2xl font-bold">Subscribe uss!! ...</p>
+            </div>
+
+            <p className="text-blue-800">
+              <Typewriter
+                words={["  Stay updated with the latest game releases!"]}
+                loop={false}
+                cursor
+                cursorStyle="_"
+                typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              />
+            </p>
+          </div>
           <div className="flex items-center justify-center gap-4 mt-5">
             <input
               type="text"

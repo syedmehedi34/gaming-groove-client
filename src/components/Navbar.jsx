@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -84,8 +85,9 @@ const Navbar = () => {
                   {/*  */}
 
                   <div
-                    className="tooltip tooltip-bottom"
-                    data-tip={user?.displayName}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user?.displayName}
+                    data-tooltip-place="bottom"
                   >
                     <img
                       className="w-12 h-12 rounded-full transition-transform duration-200 ease-in-out  active:scale-90  cursor-pointer object-cover border-2 border-[#1e3c72]"
@@ -129,6 +131,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <Tooltip id="my-tooltip" />
     </div>
   );
 };

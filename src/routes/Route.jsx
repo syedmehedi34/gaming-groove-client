@@ -10,7 +10,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../components/ReviewDetails";
-import Loading from "../pages/Loading";
+import "react-tooltip/dist/react-tooltip.css";
 
 const routes = [
   {

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import Marquee from "react-fast-marquee";
 import RatedGame from "./RatedGame";
+import { Typewriter } from "react-simple-typewriter";
 
 const RatedGamesContainer = ({ data }) => {
   //   console.log(data);
@@ -11,8 +12,18 @@ const RatedGamesContainer = ({ data }) => {
           Top Reviews
         </h1>
         <h3 className="text-2xl text-center font-bold">
-          More Than <span className="text-[#FF3300]">5k+ Review </span> In One
-          Place!
+          More Than
+          <span className="text-[#FF3300]">
+            <Typewriter
+              words={["  5k+ Review In One Place!"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </span>
         </h3>
         <p className="text-center text-xl font-extralight mt-3 mb-8">
           Search your favorite Games & play Enjoy

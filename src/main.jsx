@@ -6,6 +6,7 @@ import router from "./routes/Route";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AuthProvider from "./providers/AuthProvider";
+import { Tooltip } from "react-tooltip";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

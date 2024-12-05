@@ -9,18 +9,15 @@ const Hero = () => {
         {/*  */}
         <div className="flex flex-col md:flex-row h-[450px] w-full">
           <div className="flex-1 flex flex-col justify-center p-6 *:text-center">
-            <h1 className="text-3xl font-bold mb-4 ">
-              Unlock Deals, Embrace Savings!
-            </h1>
+            <h1 className="text-3xl font-bold mb-4 ">BattleZone Royale</h1>
             <p className="text-gray-600">
-              Save big on your favorite brands with exclusive coupons and
-              discounts—completely free! Your one-stop shop for unbeatable
-              savings.
+              Enter the battlegrounds where survival is the only rule. Outplay,
+              outlast, and claim victory against the odds.
             </p>
           </div>
           <div className="flex-1">
             <img
-              src="https://i.ibb.co.com/BN4yQ31/coupon-1.png"
+              src="https://www.levelinfinite.com/wp-content/uploads/2024/02/pubg-mobile-game-image-5.jpg"
               alt="Placeholder"
               className="w-full h-full object-cover "
             />
@@ -46,16 +43,16 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row  h-[450px] w-full">
           <div className="flex-1 flex flex-col justify-center p-6 *:text-center">
             <h1 className="text-3xl font-bold mb-4 ">
-              Your Free Pass to Incredible Savings!
+              The White Wolf Chronicles
             </h1>
             <p className="text-gray-600">
-              Discover the latest coupons from over 500 online shops. Shop
-              smarter, save bigger, and enjoy more!
+              Step into the boots of Geralt of Rivia, a monster hunter
+              navigating a world of treachery, magic, and untold dangers.
             </p>
           </div>
           <div className="flex-1">
             <img
-              src="https://i.ibb.co.com/YhNs0Th/coupon-2.jpg"
+              src="https://miro.medium.com/v2/resize:fit:2000/0*0bukiqD7QkSm1La_"
               alt="Placeholder"
               className="w-full h-full object-cover"
             />
@@ -78,16 +75,16 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row  h-[450px] w-full">
           <div className="flex-1 flex flex-col justify-center p-6 *:text-center">
             <h1 className="text-3xl font-bold mb-4 ">
-              500+ Online Shops, Unlimited Discounts!
+              Legends of the Forgotten Realms
             </h1>
             <p className="text-gray-600">
-              Browse a wide range of free coupons and make your online shopping
-              more affordable than ever before. Start saving now!
+              Dive into a realm of magic, mystery, and choice. Shape your story
+              in a world where every decision leaves its mark.
             </p>
           </div>
           <div className="flex-1">
             <img
-              src="https://i.ibb.co.com/SVYS7hQ/coupon-3.jpg"
+              src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/292030/ss_0901e64e9d4b8ebaea8348c194e7a3644d2d832d.1920x1080.jpg?t=1730212926"
               alt="Placeholder"
               className="w-full h-full object-cover "
             />
