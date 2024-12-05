@@ -26,8 +26,8 @@ const ReviewCards = ({ game }) => {
       </div>
 
       {/* Game Details */}
-      <div className="">
-        <h2 className="card-title text-2xl font-semibold text-gray-800 mt-3 mb-2">
+      <div className="flex flex-col ">
+        <h2 className="card-title text-2xl font-semibold text-gray-800 mt-3 mb-2 ">
           {gameTitle}
         </h2>
         <p className="font-semibold mb-1 text-purple-800 mt-2">
