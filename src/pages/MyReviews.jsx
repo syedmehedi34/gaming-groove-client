@@ -39,7 +39,7 @@ const MyReviews = () => {
     };
 
     fetchUserReviews();
-  }, [userMail]);
+  }, [userMail, reviews]);
 
   // * [ delete a item ]------------
   const handleDelete = (_id) => {

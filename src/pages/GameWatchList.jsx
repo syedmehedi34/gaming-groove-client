@@ -32,7 +32,7 @@ const GameWatchList = () => {
     };
 
     fetchReviews();
-  }, [user]);
+  }, [user, reviews]);
 
   return (
     <div className="w-11/12 mx-auto mt-24">
