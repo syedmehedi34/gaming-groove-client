@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import {
@@ -10,10 +10,13 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { AuthContext } from "../providers/AuthProvider";
 
 const ReviewDetails = () => {
   const navigate = useNavigate();
   const gameDetails = useLoaderData();
+  const { user } = useContext(AuthContext);
+  // console.log(user);
   //   console.log(gameDetails);
   //   const gameDetails = data[0];
 
@@ -160,14 +163,17 @@ const ReviewDetails = () => {
             </div>
 
             {/* Watchlist Button */}
-            <div className="mt-6 text-center">
-              <button
-                onClick={() => handleAddWatch(gameDetails)}
-                className="bg-gradient-to-r btn from-purple-500 to-indigo-500 text-white  font-semibold rounded-full shadow-md hover:from-purple-600 hover:to-indigo-600 transition-all duration-300"
-              >
-                Add to Watchlist
-              </button>
-            </div>
+
+            {user && (
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => handleAddWatch(gameDetails)}
+                  className="bg-gradient-to-r btn from-purple-500 to-indigo-500 text-white  font-semibold rounded-full shadow-md hover:from-purple-600 hover:to-indigo-600 transition-all duration-300"
+                >
+                  Add to Watchlist
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

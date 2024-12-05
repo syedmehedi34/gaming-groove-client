@@ -23,7 +23,7 @@ const AllReviews = () => {
     }
   };
 
-  console.log(reviews);
+  // console.log(reviews);
 
   //--------------------------------------
   return (

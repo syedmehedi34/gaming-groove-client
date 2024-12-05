@@ -8,8 +8,8 @@ const RatedGamesContainer = ({ data }) => {
   return (
     <div className=" rounded-t-[64px] py-7 mt-20 mb-10 flex flex-col justify-center items-center bg-gradient-to-b from-slate-200 to-[rgba(248,250,252,0.25)]">
       <div className="my-20 w-full flex items-center  flex-col">
-        <h1 className="mb-5 partial-underline uppercase text-4xl font-bold">
-          Top Reviews
+        <h1 className="mb-7 partial-underline uppercase text-3xl font-bold">
+          Highest Rated Games
         </h1>
         <h3 className="text-2xl text-center font-bold">
           More Than
@@ -25,7 +25,7 @@ const RatedGamesContainer = ({ data }) => {
             />
           </span>
         </h3>
-        <p className="text-center text-xl font-extralight mt-3 mb-8">
+        <p className="text-center text-lg font-extralight mt-3 mb-8">
           Search your favorite Games & play Enjoy
         </p>
 
