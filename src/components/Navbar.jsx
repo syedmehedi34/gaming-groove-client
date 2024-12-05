@@ -6,7 +6,7 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  // console.log(user);
   const list = (
     <>
       <li>
