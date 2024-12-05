@@ -6,31 +6,29 @@ const AllReviews = () => {
   const data = useLoaderData();
   const [reviews, setReviews] = useState(data);
 
-  // ? sorting options ----------------
-
+  // ? Sorting Options ----------------
   const handleSelectChange = (event) => {
     const value = event.target.value;
 
     if (value === "ratings") {
       console.log("Sorting by ratings...");
-      const ratingSort = reviews.sort((a, b) => b.rating - a.rating);
+      const ratingSort = [...reviews].sort((a, b) => b.rating - a.rating);
       setReviews(ratingSort);
-
-      //
     } else if (value === "year") {
       console.log("Sorting by year...");
-      const yearSort = reviews.sort(
+      const yearSort = [...reviews].sort(
         (a, b) => b.publishingYear - a.publishingYear
       );
       setReviews(yearSort);
-      //
     }
   };
+
   console.log(reviews);
+
   //--------------------------------------
   return (
     <div className="w-11/12 mx-auto mt-28">
-      {/*  sorting starts */}
+      {/* Sorting Starts */}
       <div className="py-4">
         <div className="flex justify-center ">
           <select
