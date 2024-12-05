@@ -52,7 +52,7 @@ const ReviewDetails = () => {
 
   ////////////////////////////////
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-10 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-10 text-white pt-28">
       <div className="container mx-auto px-6">
         {/* Back Button */}
         <div className="mb-8">

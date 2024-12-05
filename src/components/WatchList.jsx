@@ -1,8 +1,4 @@
-import { CgViewDay } from "react-icons/cg";
-import { FaEye } from "react-icons/fa";
-import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
-import { RiChatDeleteFill } from "react-icons/ri";
 import ReactStars from "react-rating-stars-component";
 import { toast } from "react-toastify";
 
