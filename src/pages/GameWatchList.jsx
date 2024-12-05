@@ -6,7 +6,7 @@ import axios from "axios"; // Import axios
 const GameWatchList = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true); // Added loading state
+  const [loading, setLoading] = useState(true); // loader state
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -18,11 +18,11 @@ const GameWatchList = () => {
 
       try {
         const response = await axios.get(
-          `https://gaming-groove-server.vercel.app/game_watchlist`,
+          // `https://gaming-groove-server.vercel.app/game_watchlist`,
+          `http://localhost:5001/game_watchlist`,
           {
             params: {
               userMail: user.email,
-              isWatchList: true,
             },
           }
         );

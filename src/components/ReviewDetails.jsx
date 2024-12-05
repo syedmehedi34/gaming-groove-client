@@ -11,47 +11,134 @@ import {
 } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const ReviewDetails = () => {
   const navigate = useNavigate();
   const gameDetails = useLoaderData();
   const { user } = useContext(AuthContext);
-  // console.log(user);
-  //   console.log(gameDetails);
-  //   const gameDetails = data[0];
 
-  // * [ add watch functionalities ]--------
-  const handleAddWatch = (game) => {
-    // console.log(game);
-    const id = game._id;
+  // ? add a new collection for watchlist
+  // const handleWatchCollection = (game) => {
+  //   const reviewID = game._id;
+  //   const userMail = user.email;
+  //   const {
+  //     gameCover,
+  //     gameTitle,
+  //     reviewDescription,
+  //     rating,
+  //     publishingYear,
+  //     genre,
+  //     userName,
+  //   } = game;
+  //   const watchCollection = {
+  //     reviewID,
+  //     userMail,
+  //     gameCover,
+  //     gameTitle,
+  //     reviewDescription,
+  //     rating,
+  //     publishingYear,
+  //     genre,
+  //     userName,
+  //   };
+  //   console.log(watchCollection);
 
-    //
-    const isWatchList = true;
+  //   // send the data to server and database
+  //   fetch("http://localhost:5001/game_watchlist", {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(watchCollection),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.insertedId) {
+  //         // console.log("successfully added");
+  //         Swal.fire({
+  //           title: "Success!",
+  //           text: "Item added successfully",
+  //           icon: "success",
+  //           confirmButtonText: "Ok",
+  //         });
+  //         // ratingRef.current = 0;
+  //         // e.target.reset();
+  //         // rating = 0;
+  //       }
+  //     });
+  // };
+  const handleWatchCollection = (game) => {
+    const reviewID = game._id;
+    const userMail = user.email;
+    // console.log(reviewID);
+    const {
+      gameCover,
+      gameTitle,
+      reviewDescription,
+      rating,
+      publishingYear,
+      genre,
+      userName,
+    } = game;
 
-    const changedData = {
-      isWatchList,
+    // Create the watch collection object
+    const watchCollection = {
+      reviewID,
+      userMail,
+      ...game,
     };
-    // console.log(changedData);
 
-    // send data to the server and database
-    fetch(`https://gaming-groove-server.vercel.app/review/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(changedData),
-    })
+    fetch(
+      `http://localhost:5001/game_watchlist?reviewID=${reviewID}&userMail=${userMail}`,
+      {
+        method: "GET",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.modifiedCount) {
-          toast.success("Game added to Watch List");
+        // console.log(data);
+
+        // If data contains any item, it means the combination already exists
+        if (data && data.length > 0) {
+          // console.log("Item already exists in the database");
+          toast.error("Already have");
         } else {
-          toast.error("Error! Can not remove this item");
+          // console.log("Item does not exist, adding to the watchlist...");
+          // Send the data to the server if not already added
+          fetch("http://localhost:5001/game_watchlist", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(watchCollection),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              // console.log(data);
+              if (data.insertedId) {
+                toast.success("added ");
+              } else {
+                toast.warning("Can not add ");
+              }
+            })
+            .catch((error) => {
+              // console.error("Error posting the data:", error);
+              toast.error("Can not add, error");
+            });
         }
+      })
+      .catch((error) => {
+        console.error("Error checking if item exists:", error);
+        Swal.fire({
+          title: "Error",
+          text: "Something went wrong while checking if the item exists.",
+          icon: "error",
+          confirmButtonText: "Ok",
+        });
       });
   };
-  //? ---------------------------------------
 
   ////////////////////////////////
   return (
@@ -167,7 +254,7 @@ const ReviewDetails = () => {
             {user && (
               <div className="mt-6 text-center">
                 <button
-                  onClick={() => handleAddWatch(gameDetails)}
+                  onClick={() => handleWatchCollection(gameDetails)}
                   className="bg-gradient-to-r btn from-purple-500 to-indigo-500 text-white  font-semibold rounded-full shadow-md hover:from-purple-600 hover:to-indigo-600 transition-all duration-300"
                 >
                   Add to Watchlist

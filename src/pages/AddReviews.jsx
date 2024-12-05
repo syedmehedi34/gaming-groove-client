@@ -19,7 +19,6 @@ const AddReviews = () => {
     const rating = ratingRef.current;
     const publishingYear = e.target.publishingYear.value;
     const genre = e.target.genre.value;
-    const isWatchList = false;
 
     const formData = {
       gameCover,
@@ -30,7 +29,6 @@ const AddReviews = () => {
       genre,
       userName,
       userMail,
-      isWatchList,
     };
 
     // console.log(formData);
