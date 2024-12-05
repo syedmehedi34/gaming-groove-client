@@ -69,7 +69,12 @@ const Navbar = () => {
                 {list}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">Gaming Groove</a>
+            <Link to="/">
+              <p className="btn btn-ghost text-xl hover:bg-inherit">
+                Gaming Groove
+              </p>
+            </Link>
+            {/* <p className="btn btn-ghost text-xl">Gaming Groove</p> */}
           </div>
 
           {/*// * center */}

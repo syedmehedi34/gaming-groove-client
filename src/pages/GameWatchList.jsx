@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import WatchList from "../components/WatchList";
+import axios from "axios"; // Import axios
 
 const GameWatchList = () => {
   const { user } = useContext(AuthContext);
@@ -16,14 +17,16 @@ const GameWatchList = () => {
       }
 
       try {
-        const response = await fetch(
-          `https://gaming-groove-server.vercel.app/game_watchlist?userMail=${user.email}&isWatchList=true`
+        const response = await axios.get(
+          `https://gaming-groove-server.vercel.app/game_watchlist`,
+          {
+            params: {
+              userMail: user.email,
+              isWatchList: true,
+            },
+          }
         );
-        if (!response.ok) {
-          throw new Error("Failed to fetch reviews");
-        }
-        const data = await response.json();
-        setReviews(data);
+        setReviews(response.data);
       } catch (error) {
         console.error("Error fetching reviews:", error);
       } finally {

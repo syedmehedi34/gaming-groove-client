@@ -71,7 +71,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-28 mb-10">
         <div className="card bg-base-100 w-full max-w-lg shrink-0 p-10 mt-0 border shadow-lg">
           <h2 className="text-2xl font-semibold text-center">
             Login to your account
@@ -120,12 +120,9 @@ const Login = () => {
                 </p>
               )}
               <label className="label">
-                <Link
-                  to="/auth/reset"
-                  className="label-text-alt link link-hover"
-                >
+                <p className="label-text-alt link link-hover">
                   Forgot password?
-                </Link>
+                </p>
               </label>
             </div>
             <div className="form-control mt-6">

@@ -30,7 +30,7 @@ const Error = () => {
                 </h3>
                 <p>The page you are looking for is not available!</p>
                 <Link
-                  to="/"
+                  to={-1}
                   style={{
                     color: "#fff",
                     padding: "10px 20px",
@@ -42,7 +42,7 @@ const Error = () => {
                   }}
                   className="click"
                 >
-                  Go to Home
+                  Go Back
                 </Link>
               </div>
             </div>

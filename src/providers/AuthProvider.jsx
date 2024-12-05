@@ -9,7 +9,6 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
-  sendPasswordResetEmail,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.init";
@@ -51,24 +50,7 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  // reset pass
-  const resetPassword = (email) => {
-    // console.log(email);
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
-        // Password reset email sent!
-        // ..
-      })
-      .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        console.log("error", error);
-        // ..
-      });
-  };
-  //  ends reset pass
-
-  //  Update user starts
+  //*  Update user starts
   const updateUser = (updatedData) => {
     return updateProfile(auth.currentUser, updatedData);
   };
@@ -96,7 +78,7 @@ const AuthProvider = ({ children }) => {
     loading,
 
     signInWithGoogle,
-    resetPassword,
+    // resetPassword,
 
     loginMail,
     setLoginMail,
