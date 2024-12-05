@@ -6,6 +6,7 @@ export default {
       backgroundImage: {
         "custom-gradient":
           "linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);",
+        image: "url('./public/cool-background.png')",
       },
     },
   },

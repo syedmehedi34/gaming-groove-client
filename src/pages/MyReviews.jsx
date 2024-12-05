@@ -25,7 +25,7 @@ const MyReviews = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:5001/my_reviews?userMail=${userMail}`
+          `https://gaming-groove-server.vercel.app/my_reviews?userMail=${userMail}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch reviews");
@@ -57,7 +57,7 @@ const MyReviews = () => {
       confirmButtonText: "Yes, Delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5001/review/${_id}`, {
+        fetch(`https://gaming-groove-server.vercel.app/review/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

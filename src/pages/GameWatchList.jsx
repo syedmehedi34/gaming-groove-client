@@ -16,7 +16,7 @@ const GameWatchList = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:5001/game_watchlist?userMail=${user.email}&isWatchList=true`
+          `https://gaming-groove-server.vercel.app/game_watchlist?userMail=${user.email}&isWatchList=true`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch reviews");

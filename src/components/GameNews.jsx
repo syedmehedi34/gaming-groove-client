@@ -1,4 +1,5 @@
 import { FaNewspaper } from "react-icons/fa";
+import { MdArrowOutward } from "react-icons/md";
 
 const GameNews = () => {
   const newsItems = [
@@ -8,6 +9,8 @@ const GameNews = () => {
       summary:
         "The latest update for Starfield introduces new quests, planets, and features. Learn more about the exciting changes!",
       link: "/news/starfield-dlc",
+      imgSrc:
+        "https://i.ytimg.com/vi/EbxaVRhRdLA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD0WzDvHv85yyS_1LtcolT3mWB_Hw",
     },
     {
       title: "Cyberpunk 2077 Update 1.6 Released",
@@ -15,6 +18,8 @@ const GameNews = () => {
       summary:
         "Cyberpunk 2077 has received another major patch with bug fixes, new content, and performance improvements.",
       link: "/news/cyberpunk-update",
+      imgSrc:
+        "https://techecholabs.com/wp-content/uploads/2024/06/image_search_1718629067993-1024x576.jpg.webp",
     },
     {
       title: "Hogwarts Legacy New Features Coming Soon",
@@ -22,15 +27,19 @@ const GameNews = () => {
       summary:
         "Fans of Hogwarts Legacy are in for a treat with new features arriving soon in the next patch. Get ready for more magical adventures.",
       link: "/news/hogwarts-legacy-update",
+      imgSrc:
+        "https://gamefragger.com/images/articles/banners/hogwarts-legacy-definitive-edition-reportedly-in-development-with-tentative-2025-launch-ab26758.jpg",
     },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-800 to-blue-600 text-white">
+    <section className="py-16 mb-20 drop-shadow-md bg-sky-50 rounded-3xl">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Game News and Updates
-        </h2>
+        <div className="w-fit mx-auto mb-5">
+          <h2 className="text-3xl font-extrabold text-gray-700 mb-8 text-center partial-underline">
+            Game News and Updates
+          </h2>
+        </div>
 
         <div className="space-y-8">
           {newsItems.map((news, index) => (
@@ -40,24 +49,27 @@ const GameNews = () => {
             >
               <div className="w-full md:w-1/3">
                 <img
-                  src="https://example.com/news-image.jpg"
+                  src={news.imgSrc}
                   alt={news.title}
                   className="w-full h-48 object-cover rounded-lg shadow-md"
                 />
               </div>
 
               <div className="w-full md:w-2/3">
-                <h3 className="text-xl font-semibold mb-2">{news.title}</h3>
-                <p className="text-sm text-gray-300 mb-4">
+                <h3 className="text-xl font-semibold mb-2 text-gray-600">
+                  {news.title}
+                </h3>
+                <p className="text-sm text-gray-500 mb-4">
                   {new Date(news.date).toLocaleDateString()}
                 </p>
-                <p className="text-base mb-4">{news.summary}</p>
-                <a
+                <p className="text-base mb-4 text-gray-600">{news.summary}</p>
+                <p
                   href={news.link}
-                  className="text-blue-200 hover:text-blue-300 text-lg font-semibold"
+                  className="text-blue-400 hover:text-blue-300 flex items-center gap-1 cursor-pointer"
                 >
-                  Read More &rarr;
-                </a>
+                  <span>Read More</span>
+                  <MdArrowOutward />
+                </p>
               </div>
             </div>
           ))}

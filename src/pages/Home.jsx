@@ -7,7 +7,7 @@ import GameNews from "../components/GameNews";
 const Home = () => {
   const data = useLoaderData();
   return (
-    <div className="w-11/12 mx-auto mt-24">
+    <div className="w-11/12 mx-auto mt-28">
       <div>
         <div>
           <Hero></Hero>

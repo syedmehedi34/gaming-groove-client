@@ -5,7 +5,7 @@ import RatedGame from "./RatedGame";
 const RatedGamesContainer = ({ data }) => {
   //   console.log(data);
   return (
-    <div className="rounded-t-[64px] py-12 flex flex-col justify-center items-center bg-gradient-to-b from-slate-200 to-[rgba(248,250,252,0.25)]">
+    <div className=" rounded-t-[64px] py-7 mt-20 mb-10 flex flex-col justify-center items-center bg-gradient-to-b from-slate-200 to-[rgba(248,250,252,0.25)]">
       <div className="my-20 w-full flex items-center  flex-col">
         <h1 className="mb-5 partial-underline uppercase text-4xl font-bold">
           Top Reviews

@@ -31,7 +31,7 @@ const ReviewDetails = () => {
     // console.log(changedData);
 
     // send data to the server and database
-    fetch(`http://localhost:5001/review/${id}`, {
+    fetch(`https://gaming-groove-server.vercel.app/review/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
