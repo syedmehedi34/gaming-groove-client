@@ -20,6 +20,7 @@ const routes = [
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5001/reviews/sorts"),
       },
       {
         path: "/reviews",
