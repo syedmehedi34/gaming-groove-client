@@ -52,30 +52,30 @@ const GameWatchList = () => {
             <div className="loader border-t-4 border-blue-500 w-12 h-12 rounded-full animate-spin"></div>
           </div>
         ) : (
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>Game</th>
-                <th>Review</th>
-                <th>Genre</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {reviews.length > 0 ? (
-                reviews.map((review) => (
-                  <WatchList key={review._id} review={review}></WatchList>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="4" className="text-center py-5 text-gray-500">
-                    No items available
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+          <>
+            {reviews.length > 0 ? (
+              <table className="table">
+                {/* head */}
+                <thead>
+                  <tr>
+                    <th>Game</th>
+                    <th>Review</th>
+                    <th>Genre</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {reviews.map((review) => (
+                    <WatchList key={review._id} review={review}></WatchList>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p className="text-center py-5 text-gray-500">
+                No watch list available
+              </p>
+            )}
+          </>
         )}
       </div>
     </div>

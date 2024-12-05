@@ -12,7 +12,6 @@ const Home = () => {
         <div>
           <Hero></Hero>
         </div>
-
         <section>
           <RatedGamesContainer data={data}></RatedGamesContainer>
           <UpcomingReleases></UpcomingReleases>
