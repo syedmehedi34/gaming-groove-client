@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Hero from "../components/Hero";
 import RatedGamesContainer from "../components/RatedGamesContainer";
-import DonateNow from "../components/DonateNow";
 import UpcomingReleases from "../components/UpcomingReleases";
 import GameNews from "../components/GameNews";
 
@@ -18,7 +17,6 @@ const Home = () => {
           <RatedGamesContainer data={data}></RatedGamesContainer>
           <UpcomingReleases></UpcomingReleases>
           <GameNews></GameNews>
-          <DonateNow></DonateNow>
         </section>
       </div>
     </div>
