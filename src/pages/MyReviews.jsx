@@ -1,9 +1,5 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import ReactStars from "react-rating-stars-component";
-import { RiChatDeleteFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import { FiEdit } from "react-icons/fi";
 import Swal from "sweetalert2";
 import MyReview from "../components/MyReview";
 

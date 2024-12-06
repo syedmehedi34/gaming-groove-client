@@ -1,34 +1,96 @@
+import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
 import ReactStars from "react-rating-stars-component";
 import { toast } from "react-toastify";
+import { AuthContext } from "../providers/AuthProvider";
 
 const WatchList = ({ review }) => {
-  // remove a item from watchlist
-  const handleRemoveWatch = (item) => {
-    // console.log(item);
-    const id = item._id;
-    const isWatchList = false;
-    const changedData = {
-      isWatchList,
-    };
+  const { user } = useContext(AuthContext);
+  const userMail = user.email;
+  // console.log(user.email);
 
-    //
-    // send data to the server and database
-    fetch(`https://gaming-groove-server.vercel.app/review/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(changedData),
-    })
+  //
+  // remove a item from watchlist
+  // const handleDelete = (review) => {
+  //   const reviewID = review._id; // Extract the review ID
+  //   console.log("Deleting review with ID:", reviewID);
+
+  //   Swal.fire({
+  //     title: "Are you sure to delete this?",
+  //     text: "You won't be able to revert this!",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Yes, Delete it!",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       fetch(`http://localhost:5001/watchlist?reviewID=${reviewID}`, {
+  //         method: "DELETE",
+  //       })
+  //         .then((res) => res.json())
+  //         .then((data) => {
+  //           console.log(data);
+  //           if (data.deletedCount) {
+  //             Swal.fire({
+  //               title: "Deleted!",
+  //               text: "Your file has been deleted.",
+  //               icon: "success",
+  //             });
+
+  //             // Update the reviews state
+  //             // const updatedReviews = reviews.filter(
+  //             //   (existingReview) => existingReview._id !== reviewID
+  //             // );
+  //             // setReviews(updatedReviews);
+  //           } else {
+  //             Swal.fire({
+  //               title: "Error",
+  //               text: "Failed to delete the review.",
+  //               icon: "error",
+  //             });
+  //           }
+  //         })
+  //         .catch((error) => {
+  //           console.error("Error deleting review:", error);
+  //           Swal.fire({
+  //             title: "Error",
+  //             text: "An error occurred while deleting the review.",
+  //             icon: "error",
+  //           });
+  //         });
+  //     }
+  //   });
+  // };
+
+  const handleDelete = (review) => {
+    const reviewID = review._id; // Extract the review ID
+    // console.log("Deleting review with ID:", reviewID);
+
+    fetch(
+      `https://gaming-groove-server.vercel.app/watchlist?reviewID=${reviewID}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.modifiedCount) {
-          toast.success("Removed");
+        if (data.deletedCount) {
+          toast.success("Review deleted successfully!", {
+            autoClose: 1000,
+          });
         } else {
-          toast.error("Already added this game");
+          toast.error("Failed to delete the review.", {
+            autoClose: 1000,
+          });
         }
+      })
+      .catch((error) => {
+        console.error("Error deleting review:", error);
+        toast.error("An error occurred while deleting the review.", {
+          position: "top-right",
+          autoClose: 3000,
+        });
       });
   };
 
@@ -67,7 +129,7 @@ const WatchList = ({ review }) => {
         <th>
           <div className="flex items-center justify-center gap-4">
             <button
-              onClick={() => handleRemoveWatch(review)}
+              onClick={() => handleDelete(review)}
               className="btn btn-ghost min-w-0 min-h-0 p-0 hover:bg-inherit h-fit"
             >
               <MdDelete size={22} />

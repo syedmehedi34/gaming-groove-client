@@ -18,8 +18,8 @@ const GameWatchList = () => {
 
       try {
         const response = await axios.get(
-          // `https://gaming-groove-server.vercel.app/game_watchlist`,
-          `http://localhost:5001/game_watchlist`,
+          `https://gaming-groove-server.vercel.app/watchlist`,
+          // `http://localhost:5001/watchlist`,
           {
             params: {
               userMail: user.email,
