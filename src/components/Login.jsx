@@ -6,8 +6,14 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
-  const { signInUser, signInWithGoogle, setUser, setLoginMail, setLoading } =
-    useContext(AuthContext);
+  const {
+    signInUser,
+    signInWithGoogle,
+    user,
+    setUser,
+    setLoginMail,
+    setLoading,
+  } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -23,6 +29,7 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         setUser(user);
         setLoading(false);
         e.target.reset();

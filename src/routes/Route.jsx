@@ -20,19 +20,18 @@ const routes = [
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>
-          fetch("https://gaming-groove-server.vercel.app/reviews/sorts"),
+        loader: () => fetch("http://localhost:5001/reviews/sorts"),
       },
       {
         path: "/reviews",
         element: <AllReviews></AllReviews>,
-        loader: () => fetch("https://gaming-groove-server.vercel.app/reviews"),
+        loader: () => fetch("http://localhost:5001/reviews"),
       },
       {
         path: "/review/:id",
         element: <ReviewDetails></ReviewDetails>,
         loader: ({ params }) =>
-          fetch(`https://gaming-groove-server.vercel.app/review/${params.id}`),
+          fetch(`http://localhost:5001/review/${params.id}`),
       },
 
       // ! add review private route starts

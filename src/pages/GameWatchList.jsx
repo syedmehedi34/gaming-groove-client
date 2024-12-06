@@ -17,16 +17,13 @@ const GameWatchList = () => {
       }
 
       try {
-        const response = await axios.get(
-          `https://gaming-groove-server.vercel.app/watchlist`,
-          // `http://localhost:5001/watchlist`,
-          {
-            params: {
-              userMail: user.email,
-            },
-          }
-        );
+        const response = await axios.get(`http://localhost:5001/watchlist`, {
+          params: {
+            userMail: user.email,
+          },
+        });
         setReviews(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.error("Error fetching reviews:", error);
       } finally {

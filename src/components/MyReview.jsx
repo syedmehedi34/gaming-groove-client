@@ -32,7 +32,7 @@ const MyReview = ({ review, handleDelete }) => {
     // setData(changedData);
 
     // send data to the server and database
-    fetch(`https://gaming-groove-server.vercel.app/review/${id}`, {
+    fetch(`http://localhost:5001/review/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

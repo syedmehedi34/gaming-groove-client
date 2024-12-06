@@ -12,7 +12,6 @@ import {
 import { toast } from "react-toastify";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-import axios from "axios";
 
 const ReviewDetails = () => {
   const navigate = useNavigate();
@@ -72,7 +71,7 @@ const ReviewDetails = () => {
   const handleWatchCollection = (game) => {
     const reviewID = game._id;
     const userMail = user.email;
-    // console.log(reviewID);
+    console.log(reviewID);
     const {
       gameCover,
       gameTitle,
@@ -87,11 +86,17 @@ const ReviewDetails = () => {
     const watchCollection = {
       reviewID,
       userMail,
-      ...game,
+      gameCover,
+      gameTitle,
+      reviewDescription,
+      rating,
+      publishingYear,
+      genre,
+      userName,
     };
 
     fetch(
-      `https://gaming-groove-server.vercel.app/game_watchlist?reviewID=${reviewID}&userMail=${userMail}`,
+      `http://localhost:5001/game_watchlist?reviewID=${reviewID}&userMail=${userMail}`,
       {
         method: "GET",
       }
@@ -107,7 +112,7 @@ const ReviewDetails = () => {
         } else {
           // console.log("Item does not exist, adding to the watchlist...");
           // Send the data to the server if not already added
-          fetch("https://gaming-groove-server.vercel.app/game_watchlist", {
+          fetch("http://localhost:5001/game_watchlist", {
             method: "POST",
             headers: {
               "content-type": "application/json",

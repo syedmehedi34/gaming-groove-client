@@ -64,15 +64,12 @@ const WatchList = ({ review }) => {
   // };
 
   const handleDelete = (review) => {
-    const reviewID = review._id; // Extract the review ID
-    // console.log("Deleting review with ID:", reviewID);
+    const _id = review._id;
+    // console.log(_id);
 
-    fetch(
-      `https://gaming-groove-server.vercel.app/watchlist?reviewID=${reviewID}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`http://localhost:5001/watchlist?_id=${_id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
