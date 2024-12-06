@@ -45,7 +45,7 @@ const ReviewDetails = () => {
   //   console.log(watchCollection);
 
   //   // send the data to server and database
-  //   fetch("http://localhost:5001/game_watchlist", {
+  //   fetch("https://gaming-groove-server.vercel.app/game_watchlist", {
   //     method: "POST",
   //     headers: {
   //       "content-type": "application/json",
@@ -71,7 +71,7 @@ const ReviewDetails = () => {
   const handleWatchCollection = (game) => {
     const reviewID = game._id;
     const userMail = user.email;
-    console.log(reviewID);
+    // console.log(reviewID);
     const {
       gameCover,
       gameTitle,
@@ -96,7 +96,7 @@ const ReviewDetails = () => {
     };
 
     fetch(
-      `http://localhost:5001/game_watchlist?reviewID=${reviewID}&userMail=${userMail}`,
+      `https://gaming-groove-server.vercel.app/game_watchlist?reviewID=${reviewID}&userMail=${userMail}`,
       {
         method: "GET",
       }
@@ -112,7 +112,7 @@ const ReviewDetails = () => {
         } else {
           // console.log("Item does not exist, adding to the watchlist...");
           // Send the data to the server if not already added
-          fetch("http://localhost:5001/game_watchlist", {
+          fetch("https://gaming-groove-server.vercel.app/game_watchlist", {
             method: "POST",
             headers: {
               "content-type": "application/json",

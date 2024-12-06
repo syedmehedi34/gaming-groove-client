@@ -9,14 +9,13 @@ const MyReview = ({ review, handleDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const ratingRef = useRef(review.rating);
 
-  //   console.log(review._id);
-  const handleSubmitChange = (e) => {
-    e.preventDefault();
+  const handleSubmitChange = (event) => {
+    // event.preventDefault();
     const id = review._id;
-    const gameTitle = e.target.name.value;
-    const gameCover = e.target.image.value;
-    const publishingYear = e.target.year.value;
-    const reviewDescription = e.target.review.value;
+    const gameTitle = event.target.name.value;
+    const gameCover = event.target.image.value;
+    const publishingYear = event.target.year.value;
+    const reviewDescription = event.target.review.value;
     const rating = ratingRef.current;
     const genre = review.genre;
 
@@ -28,11 +27,10 @@ const MyReview = ({ review, handleDelete }) => {
       rating,
       genre,
     };
-    console.log(changedData);
-    // setData(changedData);
+    // console.log(changedData);
 
     // send data to the server and database
-    fetch(`http://localhost:5001/review/${id}`, {
+    fetch(`https://gaming-groove-server.vercel.app/review/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -41,7 +39,7 @@ const MyReview = ({ review, handleDelete }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount) {
           // console.log("successfully updated");
           Swal.fire({
@@ -50,13 +48,67 @@ const MyReview = ({ review, handleDelete }) => {
             icon: "success",
             confirmButtonText: "Ok",
           });
+          // handleWatchListChange(event);
           setIsModalOpen(false);
-          //   e.target.reset();
+        }
+      });
+  };
+
+  // ? [ change the watchlist data ]
+  const handleWatchListChange = (event) => {
+    event.preventDefault();
+
+    const reviewID = review._id;
+    const gameCover = event.target.image.value;
+    const gameTitle = event.target.name.value;
+    const reviewDescription = event.target.review.value;
+    const rating = ratingRef.current;
+    const publishingYear = event.target.year.value;
+    const genre = review.genre;
+
+    const changedWatchedData = {
+      // id,
+      gameTitle,
+      gameCover,
+      publishingYear,
+      reviewDescription,
+      rating,
+      genre,
+    };
+    // console.log(changedWatchedData);
+    //. ?reviewID=${reviewID}
+    // setData(changedData);
+
+    // send data to the server and database
+    fetch(
+      `https://gaming-groove-server.vercel.app/watchlist/?reviewID=${reviewID}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(changedWatchedData),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.modifiedCount) {
+          // console.log("successfully updated");
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee updated successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          // setIsModalOpen(false);
+          // event.target.reset();
         }
       });
 
     // setIsModalOpen(false); // Close the modal on submit
   };
+  // -------------------------------
 
   return (
     <>
@@ -115,7 +167,14 @@ const MyReview = ({ review, handleDelete }) => {
               Change your review
             </h3>
 
-            <form onSubmit={handleSubmitChange}>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+
+                handleSubmitChange(event);
+                handleWatchListChange(event);
+              }}
+            >
               <div className="flex items-center justify-center w-96 mx-auto mb-2">
                 <label className="form-control w-full">
                   <div className="label">

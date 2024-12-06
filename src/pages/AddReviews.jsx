@@ -35,7 +35,7 @@ const AddReviews = () => {
     // console.log(gameTitle);
 
     // send data to the server and database
-    fetch("http://localhost:5001/reviews", {
+    fetch("https://gaming-groove-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -25,7 +25,7 @@ const WatchList = ({ review }) => {
   //     confirmButtonText: "Yes, Delete it!",
   //   }).then((result) => {
   //     if (result.isConfirmed) {
-  //       fetch(`http://localhost:5001/watchlist?reviewID=${reviewID}`, {
+  //       fetch(`https://gaming-groove-server.vercel.app/watchlist?reviewID=${reviewID}`, {
   //         method: "DELETE",
   //       })
   //         .then((res) => res.json())
@@ -67,7 +67,7 @@ const WatchList = ({ review }) => {
     const _id = review._id;
     // console.log(_id);
 
-    fetch(`http://localhost:5001/watchlist?_id=${_id}`, {
+    fetch(`https://gaming-groove-server.vercel.app/watchlist?_id=${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
