@@ -73,20 +73,19 @@ const WatchList = ({ review }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
-          toast.success("Review deleted successfully!", {
-            autoClose: 1000,
+          toast.success("Review removed from watchlist successfully!", {
+            autoClose: 1500,
           });
         } else {
-          toast.error("Failed to delete the review.", {
-            autoClose: 1000,
+          toast.error("Failed to delete the review from watchlist.", {
+            autoClose: 1500,
           });
         }
       })
       .catch((error) => {
         console.error("Error deleting review:", error);
         toast.error("An error occurred while deleting the review.", {
-          position: "top-right",
-          autoClose: 3000,
+          autoClose: 1500,
         });
       });
   };

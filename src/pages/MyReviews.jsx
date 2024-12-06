@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import MyReview from "../components/MyReview";
+import { toast } from "react-toastify";
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const MyReviews = () => {
   useEffect(() => {
     const fetchUserReviews = async () => {
       if (!userMail) {
-        console.error("User not logged in.");
+        // console.error("User not logged in.");
         setLoading(false); // Stop loading if no user email
         return;
       }
@@ -56,15 +57,9 @@ const MyReviews = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
+              toast.success("Deleted the review", {
+                autoClose: 1500,
               });
-
-              // Update the reviews state
-              const myReviews = reviews.filter((review) => review._id !== _id);
-              setReviews(myReviews);
             }
           });
       }

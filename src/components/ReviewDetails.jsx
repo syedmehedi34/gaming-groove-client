@@ -108,7 +108,9 @@ const ReviewDetails = () => {
         // If data contains any item, it means the combination already exists
         if (data && data.length > 0) {
           // console.log("Item already exists in the database");
-          toast.error("Already have");
+          toast.error("Already added to watchlist", {
+            autoClose: 1500,
+          });
         } else {
           // console.log("Item does not exist, adding to the watchlist...");
           // Send the data to the server if not already added
@@ -123,25 +125,24 @@ const ReviewDetails = () => {
             .then((data) => {
               // console.log(data);
               if (data.insertedId) {
-                toast.success("added ");
+                toast.success("Successfully added to watchlist", {
+                  autoClose: 1500,
+                });
               } else {
-                toast.warning("Can not add ");
+                toast.warning("Error! Can not add to watchlist", {
+                  autoClose: 1500,
+                });
               }
             })
             .catch((error) => {
-              // console.error("Error posting the data:", error);
-              toast.error("Can not add, error");
+              toast.error("Can not add, error", {
+                autoClose: 1500,
+              });
             });
         }
       })
       .catch((error) => {
-        console.error("Error checking if item exists:", error);
-        Swal.fire({
-          title: "Error",
-          text: "Something went wrong while checking if the item exists.",
-          icon: "error",
-          confirmButtonText: "Ok",
-        });
+        console.error(error);
       });
   };
 

@@ -44,17 +44,16 @@ const MyReview = ({ review, handleDelete }) => {
           // console.log("successfully updated");
           Swal.fire({
             title: "Success!",
-            text: "Coffee updated successfully",
+            text: "Review updated successfully",
             icon: "success",
             confirmButtonText: "Ok",
           });
-          // handleWatchListChange(event);
           setIsModalOpen(false);
         }
       });
   };
 
-  // ? [ change the watchlist data ]
+  // * [ change the watchlist data ]
   const handleWatchListChange = (event) => {
     event.preventDefault();
 
@@ -75,9 +74,6 @@ const MyReview = ({ review, handleDelete }) => {
       rating,
       genre,
     };
-    // console.log(changedWatchedData);
-    //. ?reviewID=${reviewID}
-    // setData(changedData);
 
     // send data to the server and database
     fetch(
@@ -94,19 +90,9 @@ const MyReview = ({ review, handleDelete }) => {
       .then((data) => {
         // console.log(data);
         if (data.modifiedCount) {
-          // console.log("successfully updated");
-          Swal.fire({
-            title: "Success!",
-            text: "Coffee updated successfully",
-            icon: "success",
-            confirmButtonText: "Ok",
-          });
-          // setIsModalOpen(false);
-          // event.target.reset();
+          console.log("successfully updated");
         }
       });
-
-    // setIsModalOpen(false); // Close the modal on submit
   };
   // -------------------------------
 
