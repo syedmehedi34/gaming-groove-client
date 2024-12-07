@@ -94,6 +94,7 @@ const ReviewDetails = () => {
       genre,
       userName,
     };
+    // console.log(genre);
 
     fetch(
       `https://gaming-groove-server.vercel.app/game_watchlist?reviewID=${reviewID}&userMail=${userMail}`,
@@ -148,13 +149,13 @@ const ReviewDetails = () => {
 
   ////////////////////////////////
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-10 text-white pt-28">
+    <div className="min-h-screen bg-slate-200 py-10 pt-24 dark:bg-dark">
       <div className="container mx-auto px-6">
         {/* Back Button */}
         <div className="mb-8">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-lg font-semibold text-indigo-200 hover:text-indigo-400 transition duration-300"
+            className="btn btn-ghost hover:bg-inherit flex items-center gap-2 text-lg font-semibold text-dark/90 hover:text-[#1e3c72] transition duration-300"
           >
             <FaArrowLeft className="text-2xl" />
             Go Back
@@ -163,10 +164,10 @@ const ReviewDetails = () => {
 
         {/* Page Header */}
         <div className="mb-10 text-center">
-          <h1 className="text-5xl font-extrabold uppercase tracking-wide text-indigo-200">
+          <h1 className="text-5xl font-extrabold uppercase tracking-wide text-indigo-700">
             Game Review
           </h1>
-          <p className="text-lg mt-3 opacity-80">
+          <p className="text-lg mt-3 text-dark/70 dark:text-indigo-400/80">
             Explore the details of this epic game!
           </p>
         </div>
@@ -186,7 +187,7 @@ const ReviewDetails = () => {
           </div>
 
           {/* Game Info */}
-          <div className="col-span-2 p-8 space-y-8">
+          <div className="col-span-2 p-8 space-y-8 dark:bg-dark">
             {/* Title and Rating */}
             <div className="flex justify-between items-center">
               <h2 className="text-4xl font-bold flex items-center gap-2 text-indigo-600">
@@ -212,7 +213,7 @@ const ReviewDetails = () => {
               <h3 className="text-lg font-semibold text-purple-600">
                 Review Summary
               </h3>
-              <p className="text-gray-700 leading-7">
+              <p className="text-gray-700 leading-7 dark:text-white/60">
                 {gameDetails.reviewDescription}
               </p>
             </div>
@@ -261,7 +262,7 @@ const ReviewDetails = () => {
               <div className="mt-6 text-center">
                 <button
                   onClick={() => handleWatchCollection(gameDetails)}
-                  className="bg-gradient-to-r btn from-purple-500 to-indigo-500 text-white  font-semibold rounded-full shadow-md hover:from-purple-600 hover:to-indigo-600 transition-all duration-300"
+                  className="bg-gradient-to-r btn from-purple-500 to-indigo-500 text-white  font-semibold rounded-full shadow-md hover:from-purple-600 hover:to-indigo-600 transition-all duration-300  dark:border-none"
                 >
                   Add to Watchlist
                 </button>

@@ -17,7 +17,7 @@ const MyReview = ({ review, handleDelete }) => {
     const publishingYear = event.target.year.value;
     const reviewDescription = event.target.review.value;
     const rating = ratingRef.current;
-    const genre = review.genre;
+    const genre = event.target.genre.value;
 
     const changedData = {
       gameTitle,
@@ -63,7 +63,8 @@ const MyReview = ({ review, handleDelete }) => {
     const reviewDescription = event.target.review.value;
     const rating = ratingRef.current;
     const publishingYear = event.target.year.value;
-    const genre = review.genre;
+    const genre = event.target.genre.value;
+    // const genre = review.genre;
 
     const changedWatchedData = {
       // id,
@@ -147,8 +148,8 @@ const MyReview = ({ review, handleDelete }) => {
       </tr>
 
       {isModalOpen && (
-        <dialog className="modal" open>
-          <div className="modal-box w-11/12 max-w-4xl">
+        <dialog className="modal " open>
+          <div className="modal-box w-11/12 max-w-4xl dark:bg-gray-800">
             <h3 className="font-bold text-2xl text-center mb-5">
               Change your review
             </h3>
@@ -164,13 +165,15 @@ const MyReview = ({ review, handleDelete }) => {
               <div className="flex items-center justify-center w-96 mx-auto mb-2">
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text">Game Title</span>
+                    <span className="label-text dark:text-white/90">
+                      Game Title
+                    </span>
                   </div>
                   <input
                     type="text"
                     name="name"
                     placeholder="Game Title"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full dark:bg-gray-600/40 dark:text-white/80"
                     required
                     defaultValue={review?.gameTitle}
                   />
@@ -179,15 +182,17 @@ const MyReview = ({ review, handleDelete }) => {
 
               <div className="flex items-center justify-center w-96 mx-auto gap-5">
                 <div>
-                  <label className="form-control w-full max-w-xs">
+                  <label className="form-control w-full max-w-xs ">
                     <div className="label">
-                      <span className="label-text">Game Cover</span>
+                      <span className="label-text dark:text-white/90">
+                        Game Cover
+                      </span>
                     </div>
                     <input
                       type="text"
                       name="image"
                       placeholder="Game cover URL"
-                      className="input input-bordered w-full max-w-xs"
+                      className="input input-bordered w-full max-w-xs dark:bg-gray-600/40 dark:text-white/80"
                       required
                       defaultValue={review?.gameCover}
                     />
@@ -196,13 +201,15 @@ const MyReview = ({ review, handleDelete }) => {
                 <div>
                   <label className="form-control w-full max-w-xs">
                     <div className="label">
-                      <span className="label-text">Publish Year</span>
+                      <span className="label-text dark:text-white/90">
+                        Publish Year
+                      </span>
                     </div>
                     <input
                       type="number"
                       name="year"
                       placeholder="Published year"
-                      className="input input-bordered w-full max-w-xs"
+                      className="input input-bordered w-full max-w-xs dark:bg-gray-600/40 dark:text-white/80"
                       defaultValue={review?.publishingYear}
                     />
                   </label>
@@ -212,11 +219,13 @@ const MyReview = ({ review, handleDelete }) => {
               <div className="flex items-center justify-center w-96 mx-auto">
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text">Review</span>
+                    <span className="label-text dark:text-white/90">
+                      Review
+                    </span>
                   </div>
                   <textarea
                     name="review"
-                    className="textarea textarea-bordered h-24"
+                    className="textarea textarea-bordered h-24 dark:bg-gray-600/40 dark:text-white/80"
                     placeholder="Your review"
                     defaultValue={review?.reviewDescription}
                   ></textarea>
@@ -233,6 +242,28 @@ const MyReview = ({ review, handleDelete }) => {
                   classNames="rating-stars"
                   onChange={(newRating) => (ratingRef.current = newRating)}
                 />
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
+                    Genre
+                  </label>
+                  <select
+                    name="genre"
+                    className="select select-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70"
+                    required
+                    defaultValue={review.genre}
+                  >
+                    <option value="" disabled>
+                      Select a genre
+                    </option>
+                    <option value="Action">Action</option>
+                    <option value="RPG">RPG</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Shooter">Shooter</option>
+                    <option value="Sports">Sports</option>
+                  </select>
+                </div>
               </div>
 
               <div className="modal-action">
@@ -243,7 +274,10 @@ const MyReview = ({ review, handleDelete }) => {
                 >
                   Close
                 </button>
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="submit"
+                  className="btn btn-primary dark:btn-neutral"
+                >
                   Submit
                 </button>
               </div>

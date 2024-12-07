@@ -75,16 +75,16 @@ const MyReviews = () => {
         </p>
       </div>
 
-      <div className="overflow-x-auto mb-20 mt-5">
+      <div className="overflow-x-auto mb-20 mt-5 ">
         {loading ? ( // Show spinner while loading
           <div className="flex justify-center items-center py-10">
             <div className="loader border-t-4 border-blue-500 w-12 h-12 rounded-full animate-spin"></div>
           </div>
         ) : reviews.length > 0 ? (
-          <table className="table">
+          <table className="table ">
             {/* head */}
             <thead>
-              <tr className="dark:text-white/90">
+              <tr className="dark:text-white/90 ">
                 <th>Game</th>
                 <th>Review</th>
                 <th>Genre</th>

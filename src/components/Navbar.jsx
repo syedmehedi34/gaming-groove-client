@@ -62,7 +62,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-slate-300/50 w-full fixed top-0 z-50 dark:bg-dark backdrop-blur-lg ">
+    <div className=" bg-slate-300/50 w-full fixed top-0 z-50 dark:bg-dark backdrop-blur-lg ">
       <div className=" w-11/12 mx-auto ">
         <div className="navbar">
           {/*// * start */}
@@ -96,7 +96,7 @@ const Navbar = () => {
               </ul>
             </div>
             <Link to="/">
-              <p className="btn btn-ghost text-xl hover:bg-inherit dark:text-white">
+              <p className="hidden md:flex btn btn-ghost text-xl hover:bg-inherit dark:text-white">
                 Gaming Groove
               </p>
             </Link>
@@ -109,7 +109,7 @@ const Navbar = () => {
           </div>
 
           {/*// * ends */}
-          <div className="navbar-end">
+          <div className="navbar-end  w-5/6 md:w-1/2">
             <div>
               {user && user?.email ? (
                 <div className="flex items-center gap-5">
@@ -121,7 +121,7 @@ const Navbar = () => {
                     data-tooltip-place="bottom"
                   >
                     <img
-                      className="w-12 h-12 rounded-full transition-transform duration-200 ease-in-out  active:scale-90  cursor-pointer object-cover border-2 border-[#1e3c72]"
+                      className="min-w-12 w-12 h-12 rounded-full transition-transform duration-200 ease-in-out  active:scale-90  cursor-pointer object-cover border-2 border-[#1e3c72]"
                       src={user?.photoURL}
                       alt="Error"
                     />

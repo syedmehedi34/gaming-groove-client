@@ -121,7 +121,7 @@ const WatchList = ({ review }) => {
             classNames="rating-stars"
           />
         </td>
-        <td>customGenre</td>
+        <td>{review.genre}</td>
         <th>
           <div className="flex items-center justify-center gap-4">
             <button

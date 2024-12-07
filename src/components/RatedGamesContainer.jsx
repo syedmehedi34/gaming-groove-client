@@ -2,11 +2,18 @@
 import Marquee from "react-fast-marquee";
 import RatedGame from "./RatedGame";
 import { Typewriter } from "react-simple-typewriter";
+import Lottie from "lottie-react";
+import animation from "../../public/animation.json";
 
 const RatedGamesContainer = ({ data }) => {
   //   console.log(data);
   return (
-    <div className=" rounded-t-[64px] py-7 mt-20 mb-10 flex flex-col justify-center items-center bg-gradient-to-b from-slate-200 to-[rgba(248,250,252,0.25)] dark:bg-gradient-to-b dark:from-gray-700 dark:to-dark">
+    <div className=" rounded-t-[64px] py-7 mt-20 mb-10 flex flex-col justify-center items-center bg-gradient-to-b from-slate-200 to-[rgba(248,250,252,0.25)] dark:bg-gradient-to-b dark:from-gray-700 dark:to-dark relative">
+      {/*  */}
+      <div className="w-20 h-20 md:w-28 md:h-28  absolute top-5 left-5">
+        <Lottie animationData={animation} loop={true} />
+      </div>
+      {/*  */}
       <div className="my-20 w-full flex items-center flex-col">
         <h1 className="mb-7 partial-underline uppercase text-3xl font-bold dark:text-white">
           Highest Rated Games
