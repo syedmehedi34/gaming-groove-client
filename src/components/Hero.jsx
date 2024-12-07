@@ -1,16 +1,16 @@
 const Hero = () => {
   return (
-    <div className="carousel w-full shadow-xl rounded-3xl bg-slate-50">
+    <div className="carousel w-full shadow-xl rounded-3xl bg-slate-50 dark:bg-dark">
       {/*  page - 1 */}
       <div
         id="slide1"
-        className="carousel-item relative w-full border rounded-3xl"
+        className="carousel-item relative w-full border rounded-3xl dark:border-white/15 dark:bg-dark dark:text-white"
       >
         {/*  */}
         <div className="flex flex-col md:flex-row h-[450px] w-full">
           <div className="flex-1 flex flex-col justify-center p-6 *:text-center">
             <h1 className="text-3xl font-bold mb-4 ">BattleZone Royale</h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-white">
               Enter the battlegrounds where survival is the only rule. Outplay,
               outlast, and claim victory against the odds.
             </p>
@@ -19,7 +19,7 @@ const Hero = () => {
             <img
               src="https://www.levelinfinite.com/wp-content/uploads/2024/02/pubg-mobile-game-image-5.jpg"
               alt="Placeholder"
-              className="w-full h-full object-cover "
+              className="w-full h-full object-cover rounded-3xl"
             />
           </div>
         </div>
@@ -34,18 +34,18 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      {/*  page - 1 */}
+      {/*  page - 2 */}
 
       <div
         id="slide2"
-        className="carousel-item relative w-full rounded-3xl border"
+        className="carousel-item relative w-full rounded-3xl border dark:border-white/15 dark:bg-dark dark:text-white"
       >
         <div className="flex flex-col md:flex-row  h-[450px] w-full">
           <div className="flex-1 flex flex-col justify-center p-6 *:text-center">
             <h1 className="text-3xl font-bold mb-4 ">
               The White Wolf Chronicles
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-white">
               Step into the boots of Geralt of Rivia, a monster hunter
               navigating a world of treachery, magic, and untold dangers.
             </p>
@@ -68,16 +68,17 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* page - 3 */}
       <div
         id="slide3"
-        className="carousel-item relative w-full border  rounded-3xl"
+        className="carousel-item relative w-full border  rounded-3xl dark:border-white/15 dark:bg-dark dark:text-white"
       >
         <div className="flex flex-col md:flex-row  h-[450px] w-full">
           <div className="flex-1 flex flex-col justify-center p-6 *:text-center">
             <h1 className="text-3xl font-bold mb-4 ">
               Legends of the Forgotten Realms
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-white">
               Dive into a realm of magic, mystery, and choice. Shape your story
               in a world where every decision leaves its mark.
             </p>

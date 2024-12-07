@@ -27,10 +27,13 @@ const UpcomingReleases = () => {
   ];
 
   return (
-    <section className="py-16 bg-image mb-20">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="relative py-16 bg-image bg-blend-darken mb-20 rounded-2xl">
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 dark:bg-dark dark:bg-opacity-80 z-0 rounded-2lg"></div>
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="w-fit mx-auto mb-5">
-          <h2 className="text-3xl font-bold mb-8 text-center partial-underline">
+          <h2 className="text-3xl font-bold mb-8 text-center pb-1 partial-underline dark:text-white">
             Upcoming Game Releases
           </h2>
         </div>
@@ -64,14 +67,16 @@ const UpcomingReleases = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className=" items-center justify-center text-lg">
+          <div className="items-center justify-center text-lg">
             <div>
-              <p className="text-2xl font-bold">Subscribe uss!! ...</p>
+              <p className="text-2xl font-bold dark:text-white">
+                Subscribe us!! ...
+              </p>
             </div>
 
-            <p className="text-blue-800">
+            <p className="text-blue-800 dark:text-blue-300">
               <Typewriter
-                words={["  Stay updated with the latest game releases!"]}
+                words={["Stay updated with the latest game releases!"]}
                 loop={false}
                 cursor
                 cursorStyle="_"

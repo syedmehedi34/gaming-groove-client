@@ -33,10 +33,10 @@ const GameNews = () => {
   ];
 
   return (
-    <section className="py-16 mb-20 drop-shadow-md bg-sky-50 rounded-3xl">
+    <section className="py-16 mb-20 drop-shadow-md bg-sky-50 rounded-3xl dark:bg-dark/80 dark:border dark:border-white/25">
       <div className="max-w-6xl mx-auto px-4">
         <div className="w-fit mx-auto mb-5">
-          <h2 className="text-3xl font-extrabold text-gray-700 mb-8 text-center partial-underline">
+          <h2 className="text-3xl font-extrabold text-gray-700 mb-8 pb-1 text-center partial-underline dark:text-white">
             Game News and Updates
           </h2>
         </div>
@@ -51,18 +51,20 @@ const GameNews = () => {
                 <img
                   src={news.imgSrc}
                   alt={news.title}
-                  className="w-full h-48 object-cover rounded-lg shadow-md"
+                  className="w-full h-48 object-cover rounded-lg shadow-md dark:border border-white/25"
                 />
               </div>
 
               <div className="w-full md:w-2/3">
-                <h3 className="text-xl font-semibold mb-2 text-gray-600">
+                <h3 className="text-xl font-semibold mb-2 text-gray-600 dark:text-white">
                   {news.title}
                 </h3>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-sm text-gray-500 mb-4 dark:text-white/70">
                   {new Date(news.date).toLocaleDateString()}
                 </p>
-                <p className="text-base mb-4 text-gray-600">{news.summary}</p>
+                <p className="text-base mb-4 text-gray-600 dark:text-white/70">
+                  {news.summary}
+                </p>
                 <p
                   href={news.link}
                   className="text-blue-400 hover:text-blue-300 flex items-center gap-1 cursor-pointer"
@@ -76,7 +78,7 @@ const GameNews = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="flex items-center justify-center text-lg">
+          <p className="flex items-center justify-center text-lg dark:text-white/60">
             <FaNewspaper className="mr-2" />
             Stay updated with the latest news and updates from the gaming world!
           </p>

@@ -37,32 +37,32 @@ const Navbar = () => {
 
   const list = (
     <>
-      <li>
+      <li className="dark:text-white font-[500]">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="dark:text-white font-[500]">
         <NavLink to="/reviews">All Reviews</NavLink>
       </li>
 
-      <li>
+      <li className="dark:text-white font-[500]">
         <NavLink to="/add_review">Add Review</NavLink>
       </li>
 
       {user && (
-        <li>
+        <li className="dark:text-white font-[500]">
           <NavLink to="/my_reviews">My Reviews</NavLink>
         </li>
       )}
 
       {user && (
-        <li>
+        <li className="dark:text-white font-[500]">
           <NavLink to="/game_watchlist">Game WatchList</NavLink>
         </li>
       )}
     </>
   );
   return (
-    <div className="bg-slate-300 w-full fixed top-0 z-50  dark:bg-black">
+    <div className="bg-slate-300/50 w-full fixed top-0 z-50 dark:bg-dark backdrop-blur-lg ">
       <div className=" w-11/12 mx-auto ">
         <div className="navbar">
           {/*// * start */}
@@ -96,7 +96,7 @@ const Navbar = () => {
               </ul>
             </div>
             <Link to="/">
-              <p className="btn btn-ghost text-xl hover:bg-inherit">
+              <p className="btn btn-ghost text-xl hover:bg-inherit dark:text-white">
                 Gaming Groove
               </p>
             </Link>
@@ -135,7 +135,7 @@ const Navbar = () => {
                         pauseOnHover: true,
                       });
                     }}
-                    className="btn btn-neutral"
+                    className="btn btn-neutral dark:text-white"
                   >
                     Log Out
                   </button>
@@ -161,7 +161,7 @@ const Navbar = () => {
             </div>
 
             {/* toggle theme  */}
-            <div>
+            <div className="ml-3">
               <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
                 <input
@@ -171,7 +171,7 @@ const Navbar = () => {
                   onClick={handleChangeTheme}
                 />
 
-                <p className="swap-off h-10 w-10 fill-current flex items-center justify-center">
+                <p className="swap-off h-10 w-10 fill-current flex items-center justify-center dark:text-white">
                   <MdSunny size={28} />
                 </p>
                 {/* moon icon */}
