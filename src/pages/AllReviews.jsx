@@ -12,11 +12,9 @@ const AllReviews = () => {
     const value = event.target.value;
 
     if (value === "ratings") {
-      console.log("Sorting by ratings...");
       const ratingSort = [...reviews].sort((a, b) => b.rating - a.rating);
       setReviews(ratingSort);
     } else if (value === "year") {
-      console.log("Sorting by year...");
       const yearSort = [...reviews].sort(
         (a, b) => b.publishingYear - a.publishingYear
       );
@@ -25,19 +23,20 @@ const AllReviews = () => {
   };
 
   // * sort by genre
-  const genres = [...new Set(data.map((p) => p.genre))];
+  // create genres array
+  const genres = [...new Set(games.map((p) => p.genre))];
 
   const handleGenreChange = (event) => {
     setReviews(data);
     const genre = event.target.value;
-    console.log(genre);
+    // console.log(genre);
 
     const filteredGames =
       genre === "All"
         ? games
         : games.filter((review) => review.genre === genre);
     setReviews(filteredGames);
-    console.log(filteredGames);
+    // console.log(filteredGames);
   };
 
   //--------------------------------------
@@ -48,7 +47,7 @@ const AllReviews = () => {
         <div className="flex justify-between ">
           <div>
             <select
-              className="select select-bordered w-full max-w-xs"
+              className="select select-bordered w-full max-w-xs dark:bg-gray-500/60"
               onChange={handleSortBy}
             >
               <option disabled selected>
@@ -62,7 +61,7 @@ const AllReviews = () => {
           <div>
             <select
               onChange={handleGenreChange}
-              className="select select-bordered w-full max-w-xs"
+              className="select select-bordered w-full max-w-xs dark:bg-gray-500/60"
               // value={selectedGenre}
             >
               <option value="All">All</option>

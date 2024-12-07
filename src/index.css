@@ -43,25 +43,21 @@
 }
 
 /** -------------------------- */
-
 .active {
   background: inherit !important;
   color: #1e3c72 !important;
   text-decoration: underline;
   font-weight: 700 !important;
 }
-
-/* Styles for dark mode */
 .dark .active {
   background: inherit !important;
   color: #cbd5e1 !important;
   text-decoration: underline;
   font-weight: 700 !important;
 }
-
 /* ------------------------ */
 
-/* ?????? */
+/* ---------- */
 .dark {
   background-color: #1a1a1d;
   color: white;

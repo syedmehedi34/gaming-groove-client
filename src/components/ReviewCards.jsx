@@ -15,7 +15,7 @@ const ReviewCards = ({ game }) => {
   } = game;
 
   return (
-    <div className="card bg-white drop-shadow-xl rounded-lg p-5">
+    <div className="card bg-white drop-shadow-xl rounded-lg p-5 dark:bg-gray-500/60 ">
       {/* Game Image */}
       <div className="w-full h-32">
         <img
@@ -27,10 +27,10 @@ const ReviewCards = ({ game }) => {
 
       {/* Game Details */}
       <div className="flex flex-col ">
-        <h2 className="card-title text-2xl font-semibold text-gray-800 mt-3 mb-2 ">
+        <h2 className="card-title text-2xl font-semibold text-gray-800 mt-3 mb-2 dark:text-white">
           {gameTitle}
         </h2>
-        <p className="font-semibold mb-1 text-purple-800 mt-2">
+        <p className="font-semibold mb-1 text-purple-800 mt-2 dark:text-white/90">
           Rating: {rating}
         </p>
         <div className="mb-2">
@@ -42,12 +42,14 @@ const ReviewCards = ({ game }) => {
             classNames="rating-stars"
           />
         </div>
-        <p className="text-gray-600">Year: {publishingYear}</p>
+        <p className="text-gray-600 dark:text-white/90">
+          Year: {publishingYear}
+        </p>
 
         {/* Explore Details Button */}
         <div className="mt-4">
           <Link to={`/review/${_id}`}>
-            <button className="btn bg-custom-gradient text-white w-full">
+            <button className="btn bg-custom-gradient text-white w-full dark:border-none">
               Explore Details
             </button>
           </Link>

@@ -61,35 +61,35 @@ const AddReviews = () => {
 
   //////////////////
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-100">
-      <div className="pt-28 bg-gradient-to-br from-blue-50 to-purple-100 flex justify-center items-center py-8">
-        <div className="card w-full max-w-4xl shadow-xl bg-white p-8 rounded-lg">
-          <h2 className="text-3xl font-extrabold text-center mb-6 text-[#24447b]">
+    <div className="bg-purple-50/60 dark:bg-dark">
+      <div className="pt-28 flex justify-center items-center py-8">
+        <div className="card w-full max-w-4xl shadow-2xl bg-white dark:bg-dark dark:border dark:border-white/25 p-8 rounded-lg">
+          <h2 className="text-3xl font-extrabold text-center mb-6 text-[#24447b] dark:text-white">
             Add New Review
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 ">
             {/* Game Cover and Title */}
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                   Game Cover Image URL
                 </label>
                 <input
                   type="text"
                   name="gameCover"
-                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 "
+                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70"
                   placeholder="https://example.com/image.jpg"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                   Game Title
                 </label>
                 <input
                   type="text"
                   name="name"
-                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
+                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70"
                   placeholder="Enter game title"
                   required
                 />
@@ -98,12 +98,12 @@ const AddReviews = () => {
 
             {/* Review Description */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                 Review Description
               </label>
               <textarea
                 name="reviewDescription"
-                className="textarea textarea-bordered w-full h-28 rounded-md focus:outline-none focus:ring-2 "
+                className="textarea textarea-bordered w-full h-28 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70"
                 placeholder="Write your detailed review here..."
                 required
               ></textarea>
@@ -111,7 +111,7 @@ const AddReviews = () => {
 
             {/* Rating */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                 Rating
               </label>
               <ReactStars
@@ -122,32 +122,32 @@ const AddReviews = () => {
                 activeColor="#ffd700"
                 classNames="rating-stars"
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-500 mt-1 dark:text-white/70">
                 Select a rating by clicking the stars.
               </p>
             </div>
 
             {/* Publishing Year and Genre */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6 ">
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                   Publishing Year
                 </label>
                 <input
                   type="number"
                   name="publishingYear"
-                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
+                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70"
                   placeholder="Ex: 2024"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                   Genre
                 </label>
                 <select
                   name="genre"
-                  className="select select-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 "
+                  className="select select-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70"
                   required
                 >
                   <option value="" disabled>
@@ -167,25 +167,25 @@ const AddReviews = () => {
 
             <div className="flex gap-6">
               <div className="w-full">
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                   User Name
                 </label>
                 <input
                   type="text"
                   name="gameTitle"
-                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
+                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70 dark:text-white/60 dark:border-none"
                   disabled
                   defaultValue={userName}
                 />
               </div>
               <div className="w-full">
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-700 dark:text-white/70">
                   User Email
                 </label>
                 <input
                   type="text"
                   name="gameTitle"
-                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2"
+                  className="input input-bordered w-full h-10 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-700/70 dark:text-white/60 dark:border-none"
                   disabled
                   defaultValue={userMail}
                 />
