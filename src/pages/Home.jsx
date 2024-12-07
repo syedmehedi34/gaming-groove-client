@@ -7,16 +7,18 @@ import GameNews from "../components/GameNews";
 const Home = () => {
   const data = useLoaderData();
   return (
-    <div className="w-11/12 mx-auto mt-24">
-      <div>
+    <div className="">
+      <div className="w-11/12 mx-auto mt-24">
         <div>
-          <Hero></Hero>
+          <div>
+            <Hero></Hero>
+          </div>
+          <section>
+            <RatedGamesContainer data={data}></RatedGamesContainer>
+            <UpcomingReleases></UpcomingReleases>
+            <GameNews></GameNews>
+          </section>
         </div>
-        <section>
-          <RatedGamesContainer data={data}></RatedGamesContainer>
-          <UpcomingReleases></UpcomingReleases>
-          <GameNews></GameNews>
-        </section>
       </div>
     </div>
   );

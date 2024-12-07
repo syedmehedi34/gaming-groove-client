@@ -1,12 +1,40 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { Tooltip } from "react-tooltip";
+import { MdSunny } from "react-icons/md";
+import { FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   // console.log(user);
+
+  const [mode, setMode] = useState("light");
+  const handleChangeTheme = () => {
+    // console.log("clicked");
+    // html.setAttribute("data-theme", "dark");
+
+    const html = document.documentElement;
+
+    if (mode == "light") {
+      html.classList.remove("light");
+      html.classList.add("dark");
+      setMode("dark");
+      localStorage.setItem("mode", "dark");
+    } else {
+      html.classList.remove("dark");
+      html.classList.add("light");
+      setMode("light");
+      localStorage.setItem("mode", "light");
+    }
+  };
+  useEffect(() => {
+    const currentMode = localStorage.getItem("mode") || "light";
+    document.documentElement.classList.add(currentMode);
+    setMode(currentMode);
+  }, []);
+
   const list = (
     <>
       <li>
@@ -34,8 +62,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-slate-300 w-full fixed top-0 z-50">
-      <div className="bg-slate-300 w-11/12 mx-auto ">
+    <div className="bg-slate-300 w-full fixed top-0 z-50  dark:bg-black">
+      <div className=" w-11/12 mx-auto ">
         <div className="navbar">
           {/*// * start */}
           <div className="navbar-start">
@@ -130,6 +158,27 @@ const Navbar = () => {
                   </Link>
                 </div>
               )}
+            </div>
+
+            {/* toggle theme  */}
+            <div>
+              <label className="swap swap-rotate">
+                {/* this hidden checkbox controls the state */}
+                <input
+                  type="checkbox"
+                  className="theme-controller"
+                  value="synthwave"
+                  onClick={handleChangeTheme}
+                />
+
+                <p className="swap-off h-10 w-10 fill-current flex items-center justify-center">
+                  <MdSunny size={28} />
+                </p>
+                {/* moon icon */}
+                <p className="swap-on h-10 w-10 fill-current flex items-center justify-center">
+                  <FaMoon size={25} />
+                </p>
+              </label>
             </div>
           </div>
         </div>

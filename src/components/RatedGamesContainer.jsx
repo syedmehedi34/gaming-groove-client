@@ -8,7 +8,7 @@ const RatedGamesContainer = ({ data }) => {
   return (
     <div className=" rounded-t-[64px] py-7 mt-20 mb-10 flex flex-col justify-center items-center bg-gradient-to-b from-slate-200 to-[rgba(248,250,252,0.25)]">
       <div className="my-20 w-full flex items-center  flex-col">
-        <h1 className="mb-7 partial-underline uppercase text-3xl font-bold">
+        <h1 className="mb-7 partial-underline uppercase text-3xl font-bold dark:text-blue-600">
           Highest Rated Games
         </h1>
         <h3 className="text-2xl text-center font-bold">
