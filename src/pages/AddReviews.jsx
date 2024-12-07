@@ -193,7 +193,7 @@ const AddReviews = () => {
             <div>
               <button
                 type="submit"
-                className="btn btn-primary w-full py-3 rounded-lg bg-custom-gradient text-white font-semibold transition"
+                className="btn w-full py-3 rounded-lg bg-custom-gradient  text-white font-semibold transition dark:border-none"
               >
                 Submit Review
               </button>

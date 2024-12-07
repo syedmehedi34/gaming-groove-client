@@ -146,13 +146,13 @@ const Navbar = () => {
                 <div className="flex items-center gap-1 *:text-white">
                   <Link
                     to="/auth/login"
-                    className="btn bg-[#162c57cd] hover:bg-[#162c57cd]"
+                    className="btn bg-[#162c57cd] hover:bg-[#162c57cd] dark:border-white/25"
                   >
                     SignIn
                   </Link>
                   <Link
                     to="/auth/register"
-                    className="btn  bg-[#162c57cd] hover:bg-[#162c57cd]"
+                    className="btn  bg-[#162c57cd] hover:bg-[#162c57cd] dark:border-white/25"
                   >
                     SignUp
                   </Link>

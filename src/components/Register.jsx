@@ -90,33 +90,33 @@ const Register = () => {
   return (
     <>
       <div className="flex justify-center items-center mt-28 mb-10">
-        <div className="card border bg-base-100 w-full max-w-lg shrink-0 shadow-lg p-10">
+        <div className="card border bg-base-100 dark:bg-dark dark:border-white/25 w-full max-w-lg shrink-0 shadow-lg p-10">
           <h2 className="text-2xl font-semibold text-center">
             Register your account
           </h2>
           <form onSubmit={handleSubmit} className="card-body pb-3">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text dark:text-white/70">Name</span>
               </label>
               <input
                 name="name"
                 type="text"
                 placeholder="name"
-                className="input input-bordered"
+                className="input input-bordered dark:text-white/80 dark:bg-gray-500/40"
                 required
               />
             </div>
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Photo URL</span>
+                <span className="label-text dark:text-white/70">Photo URL</span>
               </label>
               <input
                 type="text"
                 name="photo"
                 placeholder="photo-url"
-                className="input input-bordered"
+                className="input input-bordered dark:text-white/80 dark:bg-gray-500/40"
                 required
               />
             </div>
@@ -124,13 +124,13 @@ const Register = () => {
             {/* Email input */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text dark:text-white/70">Email</span>
               </label>
               <input
                 name="email"
                 type="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered dark:text-white/80 dark:bg-gray-500/40"
                 required
               />
             </div>
@@ -138,14 +138,14 @@ const Register = () => {
             {/* Password input with validation */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text dark:text-white/70">Password</span>
               </label>
               <div className="relative">
                 <input
                   name="password"
                   type={passwordVisible ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:text-white/80 dark:bg-gray-500/40"
                   required
                 />
                 <button

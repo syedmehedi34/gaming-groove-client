@@ -78,8 +78,8 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center mt-28 mb-10">
-        <div className="card bg-base-100 w-full max-w-lg shrink-0 p-10 mt-0 border shadow-lg">
+      <div className="flex justify-center items-center mt-28 mb-10 dark:bg-dark">
+        <div className="card bg-base-100 dark:bg-dark dark:border-white/25 w-full max-w-lg shrink-0 p-10 mt-0 border shadow-lg">
           <h2 className="text-2xl font-semibold text-center">
             Login to your account
           </h2>
@@ -87,26 +87,26 @@ const Login = () => {
           <form onSubmit={handleLogin} className="card-body pb-3">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text dark:text-white/70">Email</span>
               </label>
               <input
                 name="email"
                 type="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered dark:text-white/80 dark:bg-gray-500/40"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text dark:text-white/70">Password</span>
               </label>
               <div className="relative">
                 <input
                   name="password"
                   type={passwordVisible ? "text" : "password"}
                   placeholder="password"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:text-white/80 dark:bg-gray-500/40"
                   required
                 />
                 <button
@@ -127,7 +127,7 @@ const Login = () => {
                 </p>
               )}
               <label className="label">
-                <p className="label-text-alt link link-hover">
+                <p className="label-text-alt link link-hover dark:text-white/80">
                   Forgot password?
                 </p>
               </label>

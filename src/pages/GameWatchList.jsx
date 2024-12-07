@@ -57,7 +57,7 @@ const GameWatchList = () => {
               <table className="table">
                 {/* head */}
                 <thead>
-                  <tr>
+                  <tr className="dark:text-white/90">
                     <th>Game</th>
                     <th>Review</th>
                     <th>Genre</th>
