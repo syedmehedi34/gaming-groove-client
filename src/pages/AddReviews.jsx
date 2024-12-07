@@ -31,9 +31,6 @@ const AddReviews = () => {
       userMail,
     };
 
-    // console.log(formData);
-    // console.log(gameTitle);
-
     // send data to the server and database
     fetch("https://gaming-groove-server.vercel.app/reviews", {
       method: "POST",
