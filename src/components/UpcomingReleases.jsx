@@ -27,7 +27,10 @@ const UpcomingReleases = () => {
   ];
 
   return (
-    <section className="relative py-16 bg-image bg-blend-darken mb-20 rounded-2xl">
+    <section
+      className="relative py-16 bg-blend-darken mb-20 rounded-2xl"
+      style={{ backgroundImage: "url('./cool-background.png')" }}
+    >
       {/* Dark Overlay */}
       <div className="absolute inset-0 dark:bg-dark dark:bg-opacity-80 z-0 rounded-2lg"></div>
 
