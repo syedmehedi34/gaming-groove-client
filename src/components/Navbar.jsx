@@ -97,7 +97,7 @@ const Navbar = () => {
             </div>
             <Link to="/">
               <p className="hidden md:flex btn btn-ghost text-xl hover:bg-inherit dark:text-white">
-                Gaming Groove
+                Gaming <span className="text-red-500">Groove</span>
               </p>
             </Link>
             {/* <p className="btn btn-ghost text-xl">Gaming Groove</p> */}
