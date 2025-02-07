@@ -1,4 +1,5 @@
 # Project Name : _Gaming Groove : A Game Review Application_
+<img src="https://i.ibb.co.com/YBb4VYPb/gaming-groove-title.png" alt="AMS Screenshot" style="width: 100%; display: block; margin: 0 auto;">
 
 ## Project Requirements : https://docs.google.com/document/d/1MLY5uKcQQfrVWuLN6xZk6uXFq6sPhmnSryaavn1nUQw/edit?tab=t.0#heading=h.spqqwm7b6xdw
 
